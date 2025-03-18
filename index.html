@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dummy Website</title>
-    <!-- Pendo Snippet (Step 1) -->
+
+    <!-- Pendo Snippet (Step 1) - Pendo will be loaded via this script -->
     <script>
         (function(apiKey){
             (function(p,e,n,d,o){
@@ -23,14 +24,17 @@
 <body>
     <h1>Welcome to My Dummy Website!</h1>
     <p>This is a test page to integrate Pendo.</p>
+
+    <!-- A button for simulating user interaction -->
     <button id="clickButton">Click Me</button>
 
     <script>
-        // Simple script to simulate user interaction
+        // Button click event: when the button is clicked, track the event in Pendo
         document.getElementById('clickButton').addEventListener('click', function() {
-            alert("Button clicked!");
+            console.log("Button clicked!");  // Logging button click in the console
+            alert("Button clicked!");  // Showing an alert to the user
 
-            // Track the button click event in Pendo
+            // Track the button click event in Pendo (this sends data to Pendo)
             pendo.track('Button Clicked', {
                 buttonId: 'clickButton'
             });
