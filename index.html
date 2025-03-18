@@ -4,35 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dummy Website</title>
-    <!-- Pendo Snippet -->
+    <!-- Pendo Snippet (Step 1) -->
     <script>
-        (function(apiKey){
-            (function(p,e,n,d,o){
-                var v,w,x,y,z;
-                o=p[d]=p[d]||{};o._q=o._q||[];
-                v=['initialize','identify','updateOptions','pageLoad','track'];
-                for(w=0,x=v.length;w<x;++w)(function(m){
-                    o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};
-                })(v[w]);
-                y=e.createElement(n);y.async=!0;y.src='https://cdn.pendo.io/agent/static/'+apiKey+'/pendo.js';
-                z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);
-            })(window,document,'script','pendo');
-        })('a642fd64-0d1e-4fb2-57c4-9a323749f171');
-
-        // Initialize Pendo with visitor and account metadata
-        pendo.initialize({
-            visitor: {
-                id: 'visitor123',  // Unique visitor ID
-                email: 'dummyuser@example.com',  // Visitor's email
-                firstName: 'Dummy',  // Visitor's first name
-                lastName: 'User',  // Visitor's last name
-            },
-            account: {
-                id: 'account001',  // Unique account ID
-                accountName: 'Dummy Corp',  // Account name
-                payingStatus: 'unpaid'  // Set 'paid' or 'unpaid' based on the account's status
-            }
-        });
+        (function(e, t, n, d, o) {
+            var v, w, x, y, z;
+            o = e[d] = e[d] || {};
+            o._q = o._q || [];
+            v = ['initialize', 'identify', 'updateOptions', 'pageLoad', 'track'];
+            for (w = 0, x = v.length; w < x; ++w)(function(m) {
+                o[m] = o[m] || function() {
+                    o._q[m === v[0] ? 'unshift' : 'push']([m].concat([].slice.call(arguments, 0)));
+                };
+            })(v[w]);
+            y = t.createElement(n);
+            y.async = !0;
+            y.src = 'https://cdn.pendo.io/agent/static/a642fd64-0d1e-4fb2-57c4-9a323749f171/pendo.js';  // Your Pendo API Key here
+            z = t.getElementsByTagName(n)[0];
+            z.parentNode.insertBefore(y, z);
+        })(window, document, 'script', 'pendo');
     </script>
 </head>
 <body>
@@ -44,6 +33,21 @@
         // Simple script to simulate user interaction
         document.getElementById('clickButton').addEventListener('click', function() {
             alert("Button clicked!");
+        });
+
+        // Pendo Initialization with Visitor and Account metadata (Step 2)
+        pendo.initialize({
+            visitor: {
+                id: 'visitor123',  // Unique visitor ID (replace with a real or fake ID)
+                email: 'dummyuser@example.com',  // Visitor's email
+                firstName: 'Dummy',  // Visitor's first name
+                lastName: 'User',  // Visitor's last name
+            },
+            account: {
+                id: 'account001',  // Unique account ID
+                accountName: 'Dummy Corp',  // Account name
+                payingStatus: 'unpaid'  // Account payment status ('paid' or 'unpaid')
+            }
         });
     </script>
 </body>
