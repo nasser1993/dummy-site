@@ -18,6 +18,21 @@
                 z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);
             })(window,document,'script','pendo');
         })('a642fd64-0d1e-4fb2-57c4-9a323749f171');
+
+        // Initialize Pendo with visitor and account metadata
+        pendo.initialize({
+            visitor: {
+                id: 'visitor123',  // Unique visitor ID
+                email: 'dummyuser@example.com',  // Visitor's email
+                firstName: 'Dummy',  // Visitor's first name
+                lastName: 'User',  // Visitor's last name
+            },
+            account: {
+                id: 'account001',  // Unique account ID
+                accountName: 'Dummy Corp',  // Account name
+                payingStatus: 'unpaid'  // Set 'paid' or 'unpaid' based on the account's status
+            }
+        });
     </script>
 </head>
 <body>
